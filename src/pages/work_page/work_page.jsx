@@ -22,6 +22,7 @@ export default function WorkPage() {
 	const [timeLeft, setTimeLeft] = useState(initialTime)
 	const [isActive, setIsActive] = useState(false)
 	const [wpm, setWpm] = useState(0)
+	const [correctWords, setCorrectWords] = useState(new Set())
 	const correctCountRef = useRef(0)
 	const inputRef = useRef(null)
 
@@ -46,12 +47,12 @@ export default function WorkPage() {
 			const trimmed = value.trim()
 			if (trimmed === words[currentIndex]) {
 				correctCountRef.current += 1
+				setCorrectWords(prev => new Set(prev).add(currentIndex))
 			}
 			setCurrentIndex(idx => Math.min(idx + 1, words.length - 1))
 			setInput('')
 			return
 		}
-		// Regular update
 		setInput(value)
 	}
 
@@ -61,11 +62,20 @@ export default function WorkPage() {
 		setTimeLeft(initialTime)
 		setWpm(0)
 		correctCountRef.current = 0
+		setCorrectWords(new Set())
 		setIsActive(false)
 		inputRef.current?.focus()
 	}
 
 	const renderWord = (word, idx) => {
+		const isCompletedCorrect = correctWords.has(idx)
+		if (isCompletedCorrect) {
+			return (
+				<span key={idx} className={styles.correctWord}>
+					{word}
+				</span>
+			)
+		}
 		if (idx !== currentIndex) {
 			return (
 				<span key={idx} className={styles.word}>

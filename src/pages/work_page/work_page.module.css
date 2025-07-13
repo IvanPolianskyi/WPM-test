@@ -1,3 +1,4 @@
+/* work_page.module.css */
 .container {
   max-width: 800px;
   margin: 40px auto;
@@ -38,6 +39,11 @@
 .incorrectChar {
   color: #f44336;
   transition: color 0.2s;
+}
+.correctWord {
+  color: #4caf50;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 .input {
   width: 100%;

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import Home from './pages/home_page/home_page';
 import Work from './pages/work_page/work_page';
 
-
 function App() {
 	return (
 		<BrowserRouter>

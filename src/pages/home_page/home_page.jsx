@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './home_page.module.css'
 import gentleman from './gentleman.svg'
+import logo from './logo.png'
 
 const Footer = ({ info }) => {
 	return (
@@ -188,7 +189,10 @@ export default function Home() {
 			<div className={styles.side_bar}></div>
 
 			<div className={styles.main_menu}>
-				<span className={styles.main_text}>WPM Test by Ivan</span>
+				<span className={styles.main_text}>
+					<img src={logo} alt='' />
+					<div className={styles.smallText}>Made by Ivan</div>
+				</span>
 
 				<div className={styles.buttonWrapper}>
 					<div

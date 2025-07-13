@@ -102,30 +102,12 @@
 }
 
 .main_text {
-	width: 260px;
-	height: 140px;
 	position: relative;
 	display: inline-block;
+	font-family: fantasy;
 	font-size: 60px;
 	flex: 1;
-}
-.smallText{
-	color: #bfbfbf;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	position: absolute;
-	right: 0px;
-	bottom:30px;
-	z-index: 3;
-}
-
-.main_text img {
-	
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
-	display: block;
+	margin-bottom: 50px;
 }
 
 .Closetext2 {
@@ -620,7 +602,7 @@
 
 
 .footerVisible {
-	animation: staggerFadeIn 0.5s ease-out forwards;
+	animation: staggerFadeIn 0.7s ease-out forwards;
 	display: flex !important;
 }
 
