@@ -122,8 +122,7 @@ const TestList = ({ show, setSelectedTest }) => {
 		{ name: '1 Minute Test' },
 		{ name: '2 Minutes Test' },
 		{ name: '3 Minutes Test' },
-		{ name: '5 Minutes Test' },
-		{ name: '10 Minutes Test' },
+		{ name: '5 Minutes Test' }
 	]
 
 	const toggleTest = index => {
@@ -132,7 +131,6 @@ const TestList = ({ show, setSelectedTest }) => {
 			[index]: !prev[index],
 		}))
 	}
-
 	return (
 		<div className={show ? styles.trigerDivAnimated : styles.fadeOut}>
 			<div
@@ -177,7 +175,12 @@ export default function Home() {
 	}
 
 	const goToworkPage = () => {
-		navigate('/work')
+		const seconds = (() => {
+      if (!selectedTest) return 60;
+      const num = parseInt(selectedTest, 10);
+      return isNaN(num) ? 60 : num * (selectedTest.includes('Minute') ? 60 : 1);
+    })();
+    navigate('/work', { state: { seconds } });
 	}
 
 	return (
