@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Link, useNavigate, } from 'react-router-d
 import Home from './pages/home_page/home_page';
 import Work from './pages/work_page/work_page';
 import Layout from './components/Layout.jsx';
-// import Footer from './components/Footer.jsx';
 
 
 
