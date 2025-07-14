@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import styles from './home_page.module.css'
+import { useState } from 'react'
 
-export default function TestList({ show, setSelectedTest }) {
+import styles from './component.module.css'
+
+export default function TestList({ show= true, setSelectedTest=true }) {
 	const [expanded, setExpanded] = useState({})
 	const tests = [
 		'30 Seconds Test',
@@ -18,8 +19,8 @@ export default function TestList({ show, setSelectedTest }) {
 
 	if (!show) return null
 	return (
-		<div className={styles.trigerDivAnimated}>
-			<div className={styles.testContainer}>
+		<div >
+			<div >
 				{tests.map((name, idx) => (
 					<div
 						key={idx}
